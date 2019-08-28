@@ -1,0 +1,31 @@
+@model Hobby
+
+<div class = "mine">
+    
+    <div class = "leftlink">
+        <a href = "/hobby/@ViewBag.Hobby.HobbyId" class = "link">Go Back</a>
+    </div>
+    <div class = "headlink">
+        <a href = "/dashboard" class = "link">Home</a>
+        <p class = "link">|</p>
+        <a href = "/logout" class = "link">Logout</a>
+    </div>
+
+    <div class = "content">
+        <h1>Edit a Hobby</h1>
+
+        <form action="edithobby/@ViewBag.Hobby.HobbyId" class = "form-group" method = "post">
+            <span class = "error" asp-validation-for="Name"></span>
+            <br>
+            <label for = "name">Name</label>
+            <input asp-for="Name" class = "form-control" value = "@ViewBag.Hobby.Name">
+
+            <span class = "error" asp-validation-for="Description"></span>
+            <br>
+            <label for = "description">Description</label>
+            <input asp-for="Description" class = "form-control" value = "@ViewBag.Hobby.Description">
+
+            <input type = "submit" class = "btn btn-primary" value = "Update">
+        </form>
+    </div>
+</div>

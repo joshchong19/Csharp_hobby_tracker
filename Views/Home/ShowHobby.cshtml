@@ -1,0 +1,60 @@
+@model Hobby
+
+<div class = "mine">
+
+    <div class = "headlink">
+        <a href = "/dashboard" class = "link">Home</a>
+        <p class = "link">|</p>
+        <a href = "/logout" class = "link">Logout</a>
+    </div>
+    <h1 class = "headleft">@Model.Name</h1>
+
+    <div class = "top">
+
+        <p><h3>Description:</h3></p>
+        <p><h5>@Model.Description</h5></p>
+        @if (Model.UserId == ViewBag.User.UserId)
+        {
+            <a href = "/hobby/edit/@Model.HobbyId" class = "btn btn-info">Edit Hobby</a>
+        }
+    </div>
+
+    <div class = "botleft">
+        <p>@Model.Name Enthusiasts</p>
+        <table class = "table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Proficiency</th>
+            </tr>
+            @foreach (var name in Model.Likedby)
+            {
+                <tr>
+                    <td>@name.User.FirstName</td>
+                    <td>@name.Proficiency</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    @if (!Model.Likedby.Any(u => u.UserId == ViewBag.User.UserId))
+    {
+        <div class = "botright">
+            <p>Become an Enthusiast!</p>
+            <form action="likehobby/@ViewBag.Hobby.HobbyId" class = "form-group" method = "post">
+                <select type = "text" name = "Proficiency" class = "form-control">
+                    <option value = "Novice">Novice</option>
+                    <option value = "Intermediate">Intermediate</option>
+                    <option value = "Expert">Expert</option>
+                </select>
+
+                <input type = "submit" class = "btn btn-info" value = "Add To Hobbies">
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class = "botright">
+            <h6 class = "under">You already like this hobby</h6>
+        </div>
+    }
+</div>

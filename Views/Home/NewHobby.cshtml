@@ -1,0 +1,26 @@
+@model Hobby
+
+<div class = "mine">
+    <div class = "headlink">
+        <a href = "/dashboard" class = "link">Home</a>
+        <p class = "link">|</p>
+        <a href = "/logout" class = "link">Logout</a>
+    </div>
+    <h1>Create a Hobby</h1>
+
+    <div class = "content">
+        <form asp-action="CreateHobby" class = "form-group" method = "post">
+            <span class = "error" asp-validation-for="Name"></span>
+            <br>
+            <label for = "name">Name</label>
+            <input asp-for="Name" class = "form-control">
+
+            <span class = "error" asp-validation-for="Description"></span>
+            <br>
+            <label for = "description">Description</label>
+            <input asp-for="Description" class = "form-control">
+
+            <input type = "submit" class = "btn btn-primary" value = "Create">
+        </form>
+    </div>
+</div>

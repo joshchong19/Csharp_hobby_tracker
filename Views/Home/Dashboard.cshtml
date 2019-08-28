@@ -1,0 +1,28 @@
+﻿@model List<Hobby>
+
+<div class = "mine">
+    <div class = "headlink">
+        <a href = "/logout">Logout</a>
+    </div>
+
+    <h1>Hobbies</h1>
+
+    <div class = "content">
+        <table class = "table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Enthusiasts</th>
+            </tr>
+            @foreach (var hobby in Model)
+            {
+                <tr>
+                    <td><a href = "hobby/@hobby.HobbyId">@hobby.Name</a></td>
+                    <td>@hobby.Likedby.Count</td>
+                </tr>
+            }
+            
+        </table>
+
+        <a href = "/hobby/new" class = "btn btn-info">Create a Hobby</a>
+    </div>
+</div>

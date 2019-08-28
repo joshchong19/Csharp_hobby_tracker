@@ -1,0 +1,65 @@
+﻿@model IndexViewModel
+
+<div class = "mine">
+
+    <div class = "head">
+        <h1>Hobby Hub!</h1>
+    </div>
+
+    <div class = "content">
+
+        <div class = "left">
+            <h3>Register</h3>
+            <form asp-action="Register" class = "form-group" method = "post">
+                <span class = "error" asp-validation-for="Register.FirstName"></span>
+                <br>
+                <label for = "fname">First name</label>
+                <input asp-for="Register.FirstName" class = "form-control">
+
+                <span class = "error" asp-validation-for="Register.LastName"></span>
+                <br>
+                <label for = "lname">Last name</label>
+                <input asp-for="Register.LastName" class = "form-control">
+
+                <span class = "error" asp-validation-for="Register.Username"></span>
+                <br>
+                <label for = "username">Username</label>
+                <input asp-for="Register.Username" class = "form-control">
+
+                <span class = "error" asp-validation-for="Register.Email"></span>
+                <br>
+                <label for = "email">Email</label>
+                <input asp-for="Register.Email" class = "form-control">
+
+                <span class = "error" asp-validation-for="Register.Password"></span>
+                <br>
+                <label for = "password">Password</label>
+                <input asp-for="Register.Password" class = "form-control">
+
+                <span class = "error" asp-validation-for="Register.Confirm"></span>
+                <br>
+                <label for = "confirm">Confirm PW</label>
+                <input asp-for="Register.Confirm" class = "form-control">
+
+                <input type = "submit" class = "btn btn-primary" value = "Register">
+            </form>
+        </div>
+
+        <div class = "right">
+            <h3>Login</h3>
+            <form asp-action="Login" class = "form-group" method = "post">
+                <span class = "error" asp-validation-for="Login.Email"></span>
+                <br>
+                <label for = "email">Email</label>
+                <input asp-for="Login.Email" class = "form-control">
+
+                <span class = "error" asp-validation-for="Login.Password"></span>
+                <br>
+                <label for = "password">Password</label>
+                <input asp-for="Login.Password" class = "form-control">
+
+                <input type = "submit" class = "btn btn-primary" value = "Login">
+            </form>
+        </div>
+    </div>
+</div>
