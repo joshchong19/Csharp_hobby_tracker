@@ -2976,6 +2976,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Home/EditHobby.cshtml",
+      "TargetPath": "Views/Home/EditHobby.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Shared/_CookieConsentPartial.cshtml",
       "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
       "FileKind": "mvc"
